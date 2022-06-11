@@ -6,8 +6,6 @@ let computerSelection;
 
 function computerPlay(){
     let num = Math.floor(Math.random() * 3) + 1;
-    console.log(num);
-    console.log("Loading computer choice...")
     if(num == 1){
         computerSelection = "rock";
     } else if (num == 2){
@@ -15,7 +13,6 @@ function computerPlay(){
     } else {
         computerSelection = "scissors";
     }
-    console.log(computerSelection);
     return computerSelection;
 }
 
@@ -50,5 +47,13 @@ function playRound(playerSelection, computerSelection){
         if(computerSelection == "scissors"){ 
             return("You both chose scissors. Its a draw.");
         }
+    }
+}
+
+
+function game(){
+    for(let i = 0; i < 5; i++){
+        playerSelection = prompt("Rock, paper or scissors?");
+        console.log(playRound(playerSelection, computerPlay()))
     }
 }
