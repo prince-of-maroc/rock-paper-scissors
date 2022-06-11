@@ -1,7 +1,7 @@
 
 const options = ["rock", "paper", "scissors"];
 
-let computerChoice;
+let computerSelection;
 
 
 function computerPlay(){
@@ -9,11 +9,46 @@ function computerPlay(){
     console.log(num);
     console.log("Loading computer choice...")
     if(num == 1){
-        computerChoice = "rock";
+        computerSelection = "rock";
     } else if (num == 2){
-        computerChoice = "paper";
+        computerSelection = "paper";
     } else {
-        computerChoice = "scissors";
+        computerSelection = "scissors";
     }
-    console.log(computerChoice);
+    console.log(computerSelection);
+    return computerSelection;
+}
+
+function playRound(playerSelection, computerSelection){
+    if(playerSelection.toLowerCase() == "rock"){
+        if(computerSelection == "rock"){ 
+            return("You both chose Rock. Its a draw.");
+        }
+        if(computerSelection == "paper"){ 
+            return("Paper beats rock. You lose.");
+        }
+        if(computerSelection == "scissors"){ 
+            return("Rock beats scissors. You win.");
+        }
+    } else if (playerSelection.toLowerCase() == "paper"){
+        if(computerSelection == "rock"){ 
+            return("Paper beats rock. You win.");
+        }
+        if(computerSelection == "paper"){ 
+            return("You both chose paper. Its a draw.");
+        }
+        if(computerSelection == "scissors"){ 
+            return("Scissors beat paper, you lose.");
+        }
+    } else if (playerSelection.toLowerCase() == "scissors"){
+        if(computerSelection == "rock"){ 
+            return("Rock beats scissors, you lose.");
+        }
+        if(computerSelection == "paper"){ 
+            return("Scissors beats paper, you win.");
+        }
+        if(computerSelection == "scissors"){ 
+            return("You both chose scissors. Its a draw.");
+        }
+    }
 }
