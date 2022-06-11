@@ -11,10 +11,10 @@ function computerPlay(){
 }
 
 function playRound(playerSelection, computerSelection){
+    if(playerSelection.toLowerCase() == computerSelection){
+        return("You both chose " + computerSelection + ", its a draw.")
+    }
     if(playerSelection.toLowerCase() == "rock"){
-        if(computerSelection == "rock"){ 
-            return("You both chose Rock. Its a draw.");
-        }
         if(computerSelection == "paper"){ 
             return("Paper beats rock. You lose.");
         }
@@ -25,9 +25,6 @@ function playRound(playerSelection, computerSelection){
         if(computerSelection == "rock"){ 
             return("Paper beats rock. You win.");
         }
-        if(computerSelection == "paper"){ 
-            return("You both chose paper. Its a draw.");
-        }
         if(computerSelection == "scissors"){ 
             return("Scissors beat paper, you lose.");
         }
@@ -37,9 +34,6 @@ function playRound(playerSelection, computerSelection){
         }
         if(computerSelection == "paper"){ 
             return("Scissors beats paper, you win.");
-        }
-        if(computerSelection == "scissors"){ 
-            return("You both chose scissors. Its a draw.");
         }
     }
 }
