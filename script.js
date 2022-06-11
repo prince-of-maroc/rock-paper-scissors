@@ -1,9 +1,3 @@
-
-const options = ["rock", "paper", "scissors"];
-
-let computerSelection;
-
-
 function computerPlay(){
     let num = Math.floor(Math.random() * 3) + 1;
     if(num == 1){
@@ -53,7 +47,7 @@ function playRound(playerSelection, computerSelection){
 
 function game(){
     for(let i = 0; i < 5; i++){
-        playerSelection = prompt("Rock, paper or scissors?");
+        let playerSelection = prompt("Rock, paper or scissors?");
         console.log(playRound(playerSelection, computerPlay()))
     }
 }
