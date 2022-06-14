@@ -6,6 +6,9 @@ let playerChoice;
 let playerScore = 0;
 let computerScore = 0;
 
+const sbPlayer = document.querySelector('#player-score');
+const sbComputer = document.querySelector('#computer-score');
+
 
 document.addEventListener('click', ()=>{
     audio.play();
@@ -77,4 +80,8 @@ function playRound(playerChoice, computerSelection){
 
 function game(){
     playRound(playerChoice, computerPlay());
+
+    sbComputer.textContent = computerScore;
+    sbPlayer.textContent = playerScore;
+
 }
