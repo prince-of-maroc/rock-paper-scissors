@@ -1,11 +1,15 @@
 const rockButton = document.querySelector('#rock');
 const paperButton = document.querySelector('#paper');
 const scissorsButton = document.querySelector('#scissors');
+const audio = document.querySelector('audio');
 let playerChoice;
 let playerScore = 0;
 let computerScore = 0;
 
-    
+
+document.addEventListener('click', ()=>{
+    audio.play();
+},{once:true})
 rockButton.addEventListener('click', () =>{
     playerChoice = 'rock';
     console.log(playerChoice)
