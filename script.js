@@ -12,17 +12,14 @@ document.addEventListener('click', ()=>{
 },{once:true})
 rockButton.addEventListener('click', () =>{
     playerChoice = 'rock';
-    console.log(playerChoice)
     game();
 })
 paperButton.addEventListener('click', () =>{
     playerChoice = 'paper';
-    console.log(playerChoice)
     game();
 })
 scissorsButton.addEventListener('click', () =>{
     playerChoice = 'scissors';
-    console.log(playerChoice)
     game();
 })
 
@@ -79,5 +76,5 @@ function playRound(playerChoice, computerSelection){
 
 
 function game(){
-    console.log(playRound(playerChoice, computerPlay()))
+    playRound(playerChoice, computerPlay());
 }
