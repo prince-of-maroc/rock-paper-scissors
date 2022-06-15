@@ -17,6 +17,7 @@ const bobKey = document.querySelector('#bob-key');
 
 const playButton = document.querySelector('#play');
 const pauseButton = document.querySelector('#pause');
+const replayButton = document.querySelector('#replay');
 
 
 const pRock = document.createElement('img');
@@ -48,17 +49,14 @@ cScissors.style.height = '200px';
 rockButton.addEventListener('click', () =>{
     playerChoice = 'rock';
     game();
-    playClick();
 })
 paperButton.addEventListener('click', () =>{
     playerChoice = 'paper';
     game();
-    playClick();
 })
 scissorsButton.addEventListener('click', () =>{
     playerChoice = 'scissors';
     game();
-    playClick();
 })
 
 playButton.addEventListener('click', () =>{
@@ -69,6 +67,20 @@ pauseButton.addEventListener('click', ()=>{
     playClick();
     fpants.pause();
 })
+
+replayButton.addEventListener('click', ()=>{
+    playClick();
+    resetGame();
+})
+
+
+function resetGame(){
+    playerSide.innerHTML = '';
+    computerSide.innerHTML = '';
+    playerScore = 0;
+    computerScore = 0;
+    updateScoreboard();
+}
 
 function playClick(){
     click.currentTime = 0;

@@ -30,7 +30,12 @@ img {
     background-image: url('background.png');
 }
 
-
+.header-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
 .audio-buttons {
     flex-direction: row;
     gap: 20px;
@@ -40,6 +45,12 @@ img {
 .audio-buttons * {
     width: 30px;
     height: 30px;
+    cursor: pointer;
+}
+
+#replay {
+    width: 60px;
+    height: 60px;
     cursor: pointer;
 }
 
