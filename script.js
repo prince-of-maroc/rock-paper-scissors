@@ -47,14 +47,17 @@ cScissors.style.height = '200px';
 
 
 rockButton.addEventListener('click', () =>{
+    playClick();
     playerChoice = 'rock';
     game();
 })
 paperButton.addEventListener('click', () =>{
+    playClick();
     playerChoice = 'paper';
     game();
 })
 scissorsButton.addEventListener('click', () =>{
+    playClick();
     playerChoice = 'scissors';
     game();
 })
