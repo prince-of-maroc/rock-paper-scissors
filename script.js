@@ -2,6 +2,7 @@ const rockButton = document.querySelector('#rock');
 const paperButton = document.querySelector('#paper');
 const scissorsButton = document.querySelector('#scissors');
 const audio = document.querySelector('audio');
+const click = document.querySelector('#click');
 let playerChoice;
 let playerScore = 0;
 let computerScore = 0;
@@ -11,20 +12,21 @@ const sbComputer = document.querySelector('#computer-score');
 
 
 
-document.addEventListener('click', ()=>{
-    audio.play();
-},{once:true})
 rockButton.addEventListener('click', () =>{
     playerChoice = 'rock';
     game();
+    click.currentTime = 0;
+    click.play();
 })
 paperButton.addEventListener('click', () =>{
     playerChoice = 'paper';
     game();
+    click.play();
 })
 scissorsButton.addEventListener('click', () =>{
     playerChoice = 'scissors';
     game();
+    click.play();
 })
 
 
@@ -84,6 +86,7 @@ function game(){
         playRound(playerChoice, computerPlay());
         sbComputer.textContent = computerScore;
         sbPlayer.textContent = playerScore;
-    }
+    } else {
 
+    }
 }
