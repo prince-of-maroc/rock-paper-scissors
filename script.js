@@ -9,28 +9,59 @@ let computerScore = 0;
 
 const sbPlayer = document.querySelector('#player-score');
 const sbComputer = document.querySelector('#computer-score');
+const playerSide = document.querySelector('.player-side');
+const computerSide = document.querySelector('.computer-side');
 
+const bobKey = document.querySelector('#bob-key');
+
+
+const pRock = document.createElement('img');
+pRock.src = "./images/player-rock.png"
+pRock.style.width = '200px';
+pRock.style.height = '200px';
+const pPaper = document.createElement('img');
+pPaper.src = "./images/player-paper.png"
+pPaper.style.width = '200px';
+pPaper.style.height = '200px';
+const pScissors = document.createElement('img');
+pScissors.src = "./images/player-scissors.png"
+pScissors.style.width = '200px';
+pScissors.style.height = '200px';
+const cRock = document.createElement('img');
+cRock.src = "./images/computer-rock.png"
+cRock.style.width = '200px';
+cRock.style.height = '200px';
+const cPaper = document.createElement('img');
+cPaper.src = "./images/computer-paper.png"
+cPaper.style.width = '200px';
+cPaper.style.height = '200px';
+const cScissors = document.createElement('img');
+cScissors.src = "./images/computer-scissors.png"
+cScissors.style.width = '200px';
+cScissors.style.height = '200px';
 
 
 rockButton.addEventListener('click', () =>{
     playerChoice = 'rock';
     game();
-    click.currentTime = 0;
-    click.play();
+    playClick();
 })
 paperButton.addEventListener('click', () =>{
     playerChoice = 'paper';
     game();
-    click.play();
+    playClick();
 })
 scissorsButton.addEventListener('click', () =>{
     playerChoice = 'scissors';
     game();
-    click.play();
+    playClick();
 })
 
 
-
+function playClick(){
+    click.currentTime = 0;
+    click.play();
+}
 
 function computerPlay(){
     let num = Math.floor(Math.random() * 3) + 1;
@@ -84,9 +115,39 @@ function playRound(playerChoice, computerSelection){
 function game(){
     if (playerScore < 5 && computerScore <5){
         playRound(playerChoice, computerPlay());
-        sbComputer.textContent = computerScore;
-        sbPlayer.textContent = playerScore;
-    } else {
+        updateScoreboard();
+        displayHands();
+        bobKey.textContent = computerSelection.toUpperCase();
 
     }
+}
+
+
+function displayHands(){
+    if (playerChoice == 'rock'){
+        playerSide.innerHTML = '';
+        playerSide.append(pRock);
+    } else if (playerChoice == 'paper'){
+        playerSide.innerHTML = '';
+        playerSide.append(pPaper);
+    } else if (playerChoice == 'scissors'){
+        playerSide.innerHTML = '';
+        playerSide.append(pScissors);
+    }
+    if (computerSelection == 'rock'){
+        computerSide.innerHTML = '';
+        computerSide.append(cRock);
+    } else if (computerSelection == 'paper'){
+        computerSide.innerHTML = '';
+        computerSide.append(cPaper);
+    } else if (computerSelection == 'scissors'){
+        computerSide.innerHTML = '';
+        computerSide.append(cScissors);
+    }
+}
+
+
+function updateScoreboard(){
+    sbComputer.textContent = computerScore;
+    sbPlayer.textContent = playerScore;
 }

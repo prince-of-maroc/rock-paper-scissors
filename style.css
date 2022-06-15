@@ -23,18 +23,17 @@ body {
     border-style: solid;
     border-width: 10px;
     background-color: white;
+    background-image: url('background.png');
 }
 
 .scoreboard {
     display: flex;
     flex-direction: column;
-    background-color: lightgray;
     box-sizing: border-box;
     padding: 10px;
     width: 300px;
     height: 175px;
     align-self: center;
-    border-style: solid;
 }
 
 #sb-title {
@@ -64,6 +63,11 @@ body {
 
 .visuals {
     flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
 }
 
 .footer {
