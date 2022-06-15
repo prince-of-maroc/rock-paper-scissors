@@ -80,6 +80,7 @@ replayButton.addEventListener('click', ()=>{
 function resetGame(){
     playerSide.innerHTML = '';
     computerSide.innerHTML = '';
+    bobKey.innerHTML = 'NONE';
     playerScore = 0;
     computerScore = 0;
     updateScoreboard();
