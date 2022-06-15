@@ -1,7 +1,7 @@
 const rockButton = document.querySelector('#rock');
 const paperButton = document.querySelector('#paper');
 const scissorsButton = document.querySelector('#scissors');
-const audio = document.querySelector('audio');
+const fpants = document.querySelector('#fpants');
 const click = document.querySelector('#click');
 let playerChoice;
 let playerScore = 0;
@@ -13,6 +13,10 @@ const playerSide = document.querySelector('.player-side');
 const computerSide = document.querySelector('.computer-side');
 
 const bobKey = document.querySelector('#bob-key');
+
+
+const playButton = document.querySelector('#play');
+const pauseButton = document.querySelector('#pause');
 
 
 const pRock = document.createElement('img');
@@ -57,6 +61,14 @@ scissorsButton.addEventListener('click', () =>{
     playClick();
 })
 
+playButton.addEventListener('click', () =>{
+    playClick();
+    fpants.play();
+})
+pauseButton.addEventListener('click', ()=>{
+    playClick();
+    fpants.pause();
+})
 
 function playClick(){
     click.currentTime = 0;

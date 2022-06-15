@@ -26,6 +26,19 @@ body {
     background-image: url('background.png');
 }
 
+
+.audio-buttons {
+    flex-direction: row;
+    gap: 20px;
+    display: flex;
+}
+
+.audio-buttons * {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
 .scoreboard {
     display: flex;
     flex-direction: column;
