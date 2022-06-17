@@ -1,3 +1,9 @@
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const modalResults = document.querySelector('#game-results');
+const modalReplay = document.querySelector('#again-button')
+
+
 const rockButton = document.querySelector('#rock');
 const paperButton = document.querySelector('#paper');
 const scissorsButton = document.querySelector('#scissors');
@@ -45,6 +51,13 @@ cScissors.src = "./images/computer-scissors.png"
 cScissors.style.width = '200px';
 cScissors.style.height = '200px';
 
+
+modalReplay.addEventListener('click', ()=>{
+    playClick();
+    resetGame();
+    modal.classList.remove("modal-active");
+    overlay.classList.remove("overlay-active");
+})
 
 rockButton.addEventListener('click', () =>{
     playClick();
@@ -104,41 +117,41 @@ function computerPlay(){
 }
 
 function playRound(playerChoice, computerSelection){
-    if(playerChoice.toLowerCase() == computerSelection){
-        console.log("You both chose " + computerSelection + ", its a draw.")
-    }
     if(playerChoice.toLowerCase() == "rock"){
         if(computerSelection == "paper"){
             computerScore++; 
-            console.log("Paper beats rock. You lose.");
         }
         if(computerSelection == "scissors"){
             playerScore++; 
-            console.log("Rock beats scissors. You win.");
         }
     } else if (playerChoice.toLowerCase() == "paper"){
         if(computerSelection == "rock"){
             playerScore++; 
-            console.log("Paper beats rock. You win.");
         }
         if(computerSelection == "scissors"){
             computerScore++; 
-            console.log("Scissors beat paper, you lose.");
         }
     } else if (playerChoice.toLowerCase() == "scissors"){
         if(computerSelection == "rock"){
             computerScore++; 
-            console.log("Rock beats scissors, you lose.");
         }
         if(computerSelection == "paper"){
             playerScore++; 
-            console.log("Scissors beats paper, you win.");
         }
     }
-    console.log(`Player Score: ${playerScore}`);
-    console.log(`Computer Score: ${computerScore}`);
+
+    if (playerScore == 5){
+        activateModal("You win!")
+    } else if (computerScore == 5){
+        activateModal("You lose!")
+    }
 }
 
+function activateModal(message){
+    modal.classList.add("modal-active");
+    overlay.classList.add("overlay-active");
+    modalResults.textContent = message;
+}
 
 function game(){
     if (playerScore < 5 && computerScore <5){
@@ -146,7 +159,6 @@ function game(){
         updateScoreboard();
         displayHands();
         bobKey.textContent = computerSelection.toUpperCase();
-
     }
 }
 

@@ -49,8 +49,8 @@ img {
 }
 
 #replay {
-    width: 60px;
-    height: 60px;
+    width: 25px;
+    height: 25px;
     cursor: pointer;
 }
 
@@ -129,4 +129,58 @@ img {
     font-size: 25px;
     font-weight: 700;
     background-color: rgba(0,0,0,0.2); /* Black w/ opacity */
+}
+
+
+.modal {
+    position: fixed;
+    background-color: white;
+    width: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    gap: 25px;
+    font-weight: bold;
+    border: solid black 10px;
+    z-index: 10;
+    transition: 500ms ease-in-out;
+}
+
+.modal-active {
+    transform: translate(-50%,-50%) scale(1);
+}
+
+#again-button {
+    background-color: black;
+    color: white;
+    padding: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#game-results {
+    cursor: default;
+    user-select: none;
+    font-size: 50px;
+}
+
+.overlay {
+    z-index: 5;
+    position: fixed;
+    background-color: rgba(0,0,0,0.4);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform:scale(0);
+}
+
+.overlay-active {
+    transform:scale(1);
 }
