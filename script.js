@@ -2,54 +2,40 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const modalResults = document.querySelector('#game-results');
 const modalReplay = document.querySelector('#again-button')
-
-
 const rockButton = document.querySelector('#rock');
 const paperButton = document.querySelector('#paper');
 const scissorsButton = document.querySelector('#scissors');
 const fpants = document.querySelector('#fpants');
 const click = document.querySelector('#click');
-let playerChoice;
-let playerScore = 0;
-let computerScore = 0;
-
 const sbPlayer = document.querySelector('#player-score');
 const sbComputer = document.querySelector('#computer-score');
 const playerSide = document.querySelector('.player-side');
 const computerSide = document.querySelector('.computer-side');
-
 const bobKey = document.querySelector('#bob-key');
-
-
 const playButton = document.querySelector('#play');
 const pauseButton = document.querySelector('#pause');
 const replayButton = document.querySelector('#replay');
-
-
 const pRock = document.createElement('img');
 pRock.src = "./images/player-rock.png"
-pRock.style.width = '200px';
-pRock.style.height = '200px';
 const pPaper = document.createElement('img');
 pPaper.src = "./images/player-paper.png"
-pPaper.style.width = '200px';
-pPaper.style.height = '200px';
 const pScissors = document.createElement('img');
 pScissors.src = "./images/player-scissors.png"
-pScissors.style.width = '200px';
-pScissors.style.height = '200px';
 const cRock = document.createElement('img');
 cRock.src = "./images/computer-rock.png"
-cRock.style.width = '200px';
-cRock.style.height = '200px';
 const cPaper = document.createElement('img');
 cPaper.src = "./images/computer-paper.png"
-cPaper.style.width = '200px';
-cPaper.style.height = '200px';
 const cScissors = document.createElement('img');
 cScissors.src = "./images/computer-scissors.png"
-cScissors.style.width = '200px';
-cScissors.style.height = '200px';
+let playerChoice;
+let playerScore = 0;
+let computerScore = 0;
+
+const gloveArray = [pRock, pScissors, pPaper, cRock, cPaper, cScissors];
+gloveArray.forEach(glove => {
+    glove.style.width = '200px';
+    glove.style.height = '200px';
+})
 
 
 modalReplay.addEventListener('click', ()=>{
